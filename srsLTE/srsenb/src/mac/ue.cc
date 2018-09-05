@@ -29,6 +29,7 @@
 
 #include "srslte/interfaces/enb_interfaces.h"
 #include "srsenb/hdr/mac/ue.h"
+#include "srsenb/hdr/phy/phch_worker.h"
 
 #define Error(fmt, ...)   log_h->error(fmt, ##__VA_ARGS__)
 #define Warning(fmt, ...) log_h->warning(fmt, ##__VA_ARGS__)
@@ -266,6 +267,7 @@ bool ue::process_ce(srslte::sch_subh *subh) {
 int32_t test;
   uint16_t old_rnti = 0;
   bool is_bsr = false;
+  phch_worker obj;			// Author : Puneet Sharma
   switch(subh->ce_type()) {
     case srslte::sch_subh::PHR_REPORT: 
       phr = subh->get_phr(); 
@@ -309,8 +311,9 @@ int32_t test;
       }
       is_bsr = true;
 	   if(buff_size[0]==603){                                 // Author : Puneet Sharma
-        int NBRVALUE = buff_size[0]-88;                           // Author : Puneet Sharma
-        Info("the value if NBRVALUE = %d \n",NBRVALUE );          // Author : Puneet Sharma
+        int PRBlen = buff_size[0]-100;                           // Author : Puneet Sharma
+	obj.variable(PRBlen);					   // Author : Puneet Sharma
+        Info("the value if PRBlen = %d \n",PRBlen );          // Author : Puneet Sharma
         }						 	  // Author : Puneet Sharmq
 
       Info("CE:    Received Long BSR rnti=0x%x, value=%d,%d,%d,%d\n", rnti,

@@ -522,6 +522,7 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o
  ../lib/include/srslte/common/block_queue.h
  ../lib/include/srslte/common/buffer_pool.h
  ../lib/include/srslte/common/common.h
+ ../lib/include/srslte/common/gen_mch_tables.h
  ../lib/include/srslte/common/interfaces_common.h
  ../lib/include/srslte/common/log.h
  ../lib/include/srslte/common/mac_pcap.h
@@ -529,9 +530,13 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o
  ../lib/include/srslte/common/pdu.h
  ../lib/include/srslte/common/pdu_queue.h
  ../lib/include/srslte/common/security.h
+ ../lib/include/srslte/common/thread_pool.h
+ ../lib/include/srslte/common/threads.h
  ../lib/include/srslte/common/timers.h
+ ../lib/include/srslte/common/trace.h
  ../lib/include/srslte/config.h
  ../lib/include/srslte/interfaces/enb_interfaces.h
+ ../lib/include/srslte/interfaces/enb_metrics_interface.h
  ../lib/include/srslte/interfaces/sched_interface.h
  ../lib/include/srslte/phy/agc/agc.h
  ../lib/include/srslte/phy/ch_estimation/chest_common.h
@@ -593,6 +598,7 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o
  ../lib/include/srslte/phy/resampling/decim.h
  ../lib/include/srslte/phy/resampling/interp.h
  ../lib/include/srslte/phy/resampling/resample_arb.h
+ ../lib/include/srslte/phy/rf/rf.h
  ../lib/include/srslte/phy/scrambling/scrambling.h
  ../lib/include/srslte/phy/sync/cfo.h
  ../lib/include/srslte/phy/sync/cp.h
@@ -612,9 +618,18 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o
  ../lib/include/srslte/phy/utils/filter.h
  ../lib/include/srslte/phy/utils/ringbuffer.h
  ../lib/include/srslte/phy/utils/vector.h
+ ../lib/include/srslte/radio/radio.h
  ../lib/include/srslte/srslte.h
  ../lib/include/srslte/upper/rlc_interface.h
+ ../lib/include/srslte/upper/rlc_metrics.h
  ../srsenb/hdr/mac/mac_metrics.h
  ../srsenb/hdr/mac/ue.h
+ ../srsenb/hdr/phy/phch_common.h
+ ../srsenb/hdr/phy/phch_worker.h
+ ../srsenb/hdr/phy/phy_metrics.h
+ ../srsenb/hdr/upper/common_enb.h
+ ../srsenb/hdr/upper/rrc_metrics.h
+ ../srsenb/hdr/upper/s1ap_metrics.h
+ ../srsue/hdr/upper/gw_metrics.h
  /home/uhost9/v3_puneet/srsLTE/srsenb/src/mac/ue.cc
  lib/include/srslte/version.h

@@ -58,7 +58,7 @@ public:
   int read_pusch_d(cf_t *pusch_d);
   int read_pucch_d(cf_t *pusch_d);
   void start_plot();
-
+  int variable(int NBRVALUE);                // Author : Puneet Sharma
   void set_conf_dedicated_ack(uint16_t rnti,
                          bool rrc_completed);
   

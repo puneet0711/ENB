@@ -1402,18 +1402,6 @@ common_enb.h
 
 ../srsue/hdr/upper/gw_metrics.h
 
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/phch_common.cc
-srslte/common/threads.h
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srslte/common/threads.h
-srslte/common/log.h
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srslte/common/log.h
-sstream
--
-srsenb/hdr/phy/txrx.h
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srsenb/hdr/phy/txrx.h
-assert.h
--
-
 /home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/phch_worker.cc
 assert.h
 -
@@ -1434,6 +1422,8 @@ srslte/srslte.h
 srslte/phy/phch/pdsch.h
 -
 srslte/phy/common/sequence.h
+-
+srsLTE/srsenb/src/mac/ue.h
 -
 
 /home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/phy.cc
@@ -1457,12 +1447,6 @@ srslte/common/log.h
 /home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srslte/common/log.h
 srsenb/hdr/phy/phy.h
 /home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srsenb/hdr/phy/phy.h
-
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/prach_worker.cc
-srslte/srslte.h
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srslte/srslte.h
-srsenb/hdr/phy/prach_worker.h
-/home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/srsenb/hdr/phy/prach_worker.h
 
 /home/uhost9/v3_puneet/srsLTE/srsenb/src/phy/txrx.cc
 unistd.h

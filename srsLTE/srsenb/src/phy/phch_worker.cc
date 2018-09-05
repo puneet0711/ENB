@@ -53,6 +53,7 @@ using namespace std;
 #include <srslte/srslte.h>
 #include <srslte/phy/phch/pdsch.h>
 #include <srslte/phy/common/sequence.h>
+#include <srsLTE/srsenb/src/mac/ue.h>  // Author : Puneet Sharma
 
 void init_plots(srsenb::phch_worker *worker);
 pthread_t plot_thread; 
@@ -364,10 +365,20 @@ void phch_worker::rem_rnti(uint16_t rnti)
   pthread_mutex_unlock(&mutex);
 }
 
+int PRBlen = 0;                           // Author : Puneet Sharma
+int phch_worker::variable(int NBRVALUE){     // Author : Puneet Sharma
+PRBlen = NBRVALUE;			     // Author : Puneet Sharma
+return PRBlen;			     // Author : Puneet Sharma
+}
+
 void phch_worker::work_imp()
 {
   if (!running) {
     return;
+  }
+  
+  if (PRBlen!=0){                         // Author : Puneet Sharma
+  Info("Value of new NBR is %d\n",PRBlen ); // Author : Puneet Sharma
   }
 
   subframe_cfg_t sf_cfg;

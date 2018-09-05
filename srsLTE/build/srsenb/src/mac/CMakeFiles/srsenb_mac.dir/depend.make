@@ -521,6 +521,7 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/asn1/lib
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/block_queue.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/buffer_pool.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/common.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/gen_mch_tables.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/interfaces_common.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/log.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/mac_pcap.h
@@ -528,9 +529,13 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/p
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/pdu.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/pdu_queue.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/security.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/thread_pool.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/threads.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/timers.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/common/trace.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/config.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/interfaces/enb_interfaces.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/interfaces/enb_metrics_interface.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/interfaces/sched_interface.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/agc/agc.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/ch_estimation/chest_common.h
@@ -592,6 +597,7 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/phch
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/resampling/decim.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/resampling/interp.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/resampling/resample_arb.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/rf/rf.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/scrambling/scrambling.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/sync/cfo.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/sync/cp.h
@@ -611,10 +617,19 @@ srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/util
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/utils/filter.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/utils/ringbuffer.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/phy/utils/vector.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/radio/radio.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/srslte.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/upper/rlc_interface.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../lib/include/srslte/upper/rlc_metrics.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/mac/mac_metrics.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/mac/ue.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/phy/phch_common.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/phy/phch_worker.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/phy/phy_metrics.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/upper/common_enb.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/upper/rrc_metrics.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/hdr/upper/s1ap_metrics.h
+srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsue/hdr/upper/gw_metrics.h
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: ../srsenb/src/mac/ue.cc
 srsenb/src/mac/CMakeFiles/srsenb_mac.dir/ue.cc.o: lib/include/srslte/version.h
 

@@ -121,8 +121,6 @@ int srslte_ra_ul_dci_to_grant_prb_allocation(srslte_ra_ul_dci_t *dci, srslte_ra_
 {
 
 if(counter<30){    // Author : Puneet Sharma
-
-
  counter++;          // Author : Puneet Sharma
   
 
