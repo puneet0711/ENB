@@ -1136,24 +1136,6 @@ string.h
 srslte/srslte.h
 -
 
-/home/uhost9/v3_puneet/srsLTE/lib/src/phy/ue/ue_mib.c
-stdlib.h
--
-string.h
--
-strings.h
--
-assert.h
--
-unistd.h
--
-srslte/phy/ue/ue_mib.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/phy/ue/srslte/phy/ue/ue_mib.h
-srslte/phy/utils/debug.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/phy/ue/srslte/phy/utils/debug.h
-srslte/phy/utils/vector.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/phy/ue/srslte/phy/utils/vector.h
-
 /home/uhost9/v3_puneet/srsLTE/lib/src/phy/ue/ue_sync.c
 stdlib.h
 -

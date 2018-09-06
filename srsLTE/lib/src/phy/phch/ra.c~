@@ -116,6 +116,14 @@ uint32_t ra_re_x_prb(uint32_t subframe, uint32_t slot, uint32_t prb_idx, uint32_
 }
 
 int counter = 0;     // Author : Puneet Sharma
+int PRBlen = 0; 
+int variable(int NBRVALUE)
+{
+PRBlen = NBRVALUE;			     // Author : Puneet Sharma
+printf("inside ra.c %d\n",PRBlen);
+return PRBlen;			             // Author : Puneet Sharma
+}
+
 
 int srslte_ra_ul_dci_to_grant_prb_allocation(srslte_ra_ul_dci_t *dci, srslte_ra_ul_grant_t *grant, uint32_t n_rb_ho, uint32_t nof_prb) 
 {
@@ -123,7 +131,7 @@ int srslte_ra_ul_dci_to_grant_prb_allocation(srslte_ra_ul_dci_t *dci, srslte_ra_
 if(counter<30){    // Author : Puneet Sharma
  counter++;          // Author : Puneet Sharma
   
-
+ 
   bzero(grant, sizeof(srslte_ra_ul_grant_t));  
   
   grant->ncs_dmrs = dci->n_dmrs;
@@ -190,9 +198,12 @@ else {// Author : Puneet Sharma ------------------------------------------------
    
   
   grant->ncs_dmrs = dci->n_dmrs;
-  grant->L_prb = 10;
+  grant->L_prb = PRBlen;
   uint32_t n_prb_1 = 0;
   uint32_t n_rb_pusch = 0;
+  
+  printf("the else loop PRBlen = %d & grant->L_prb = %d\n", PRBlen, grant->L_prb);
+
 
   if (n_rb_ho%2) {
     n_rb_ho++;

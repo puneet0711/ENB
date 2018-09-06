@@ -365,11 +365,6 @@ void phch_worker::rem_rnti(uint16_t rnti)
   pthread_mutex_unlock(&mutex);
 }
 
-int PRBlen = 0;                           // Author : Puneet Sharma
-int phch_worker::variable(int NBRVALUE){     // Author : Puneet Sharma
-PRBlen = NBRVALUE;			     // Author : Puneet Sharma
-return PRBlen;			     // Author : Puneet Sharma
-}
 
 void phch_worker::work_imp()
 {
@@ -377,10 +372,6 @@ void phch_worker::work_imp()
     return;
   }
   
-  if (PRBlen!=0){                         // Author : Puneet Sharma
-  Info("Value of new NBR is %d\n",PRBlen ); // Author : Puneet Sharma
-  }
-
   subframe_cfg_t sf_cfg;
   phy->get_sf_config(&sf_cfg, tti_tx_dl);// TODO difference between  tti_tx_dl and t_tx_dl
 
