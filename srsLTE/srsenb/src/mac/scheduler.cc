@@ -788,6 +788,8 @@ int sched::dl_sched(uint32_t tti, sched_interface::dl_sched_res_t* sched_result)
 }
 
 // Uplink sched 
+int testcount= 0;
+
 int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched_result)
 {
   typedef std::map<uint16_t, sched_ue>::iterator it_t;
@@ -869,7 +871,9 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
       sched_ue *user = (sched_ue*) &iter->second;
       uint16_t rnti  = (uint16_t) iter->first;
       uint32_t prb_idx[2] = {0, 0};
+      log_h->info("current_tti 1 %d\n",current_tti);
       if (user->get_pucch_sched(current_tti, prb_idx)) {
+      log_h->info("current_tti 2 %d\n",current_tti);
         user->has_pucch = true;
         // allocate PUCCH
         for (int i=0;i<2;i++) {
@@ -934,7 +938,11 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
       }
 
       // Generate PDCCH except for RAR and non-adaptive retx
-      if (needs_pdcch) {
+     if (testcount > 80){  // Author : Puneet Sharma
+       needs_pdcch = false;
+      }
+    testcount++;  
+      if (needs_pdcch) { log_h->info("Generate PDCCH\n");  
         uint32_t aggr_level = user->get_aggr_level(srslte_dci_format_sizeof(SRSLTE_DCI_FORMAT0, cfg.cell.nof_prb, cfg.cell.nof_ports));
         if (!generate_dci(&sched_result->pusch[nof_dci_elems].dci_location, 
             user->get_locations(current_cfi, sf_idx),
@@ -954,7 +962,9 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
 
       // Generate grant unless DCI could not be generated and was required 
       if (sched_result->pusch[nof_dci_elems].needs_pdcch == needs_pdcch) {
+        
         uint32_t pending_data_before = user->get_pending_ul_new_data(current_tti); 
+       
         if (user->generate_format0(h, &sched_result->pusch[nof_dci_elems], current_tti, user->needs_cqi(tti, true)) > 0) 
         {
           

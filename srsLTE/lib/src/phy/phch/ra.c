@@ -199,6 +199,7 @@ else {// Author : Puneet Sharma ------------------------------------------------
   
   grant->ncs_dmrs = dci->n_dmrs;
   grant->L_prb = PRBlen;
+  //grant->L_prb = 20;
   uint32_t n_prb_1 = 0;
   uint32_t n_rb_pusch = 0;
   

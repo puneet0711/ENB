@@ -89,8 +89,8 @@ rx_gain = 40
 # filename: File path to use for packet captures
 #####################################################################
 [pcap]
-enable = false
-filename = /tmp/enb.pcap
+enable = true
+filename = /home/uhost9/enb.pcap
 
 #####################################################################
 # Log configuration
