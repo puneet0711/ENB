@@ -198,9 +198,9 @@ else {// Author : Puneet Sharma ------------------------------------------------
    
   
   grant->ncs_dmrs = dci->n_dmrs;
-  grant->L_prb = PRBlen;
-  //grant->L_prb = 20;
-  uint32_t n_prb_1 = 0;
+  //grant->L_prb = PRBlen;
+  grant->L_prb = 20;
+  uint32_t n_prb_1 = 2;
   uint32_t n_rb_pusch = 0;
   
   printf("the else loop PRBlen = %d & grant->L_prb = %d\n", PRBlen, grant->L_prb);

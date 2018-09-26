@@ -789,7 +789,7 @@ int sched::dl_sched(uint32_t tti, sched_interface::dl_sched_res_t* sched_result)
 
 // Uplink sched 
 int testcount= 0;
-
+int CCEIndex;
 int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched_result)
 {
   typedef std::map<uint16_t, sched_ue>::iterator it_t;
@@ -909,6 +909,7 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
     if (pending_msg3[tti%10].enabled && pending_msg3[tti%10].rnti == rnti) {
       h = user->get_ul_harq(tti);
       if (h) {
+        Info("Inside the pending msg3\n");
         ul_harq_proc::ul_alloc_t alloc;
         alloc.L        = pending_msg3[tti%10].L;
         alloc.RB_start = pending_msg3[tti%10].n_prb;
@@ -938,10 +939,15 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
       }
 
       // Generate PDCCH except for RAR and non-adaptive retx
-     if (testcount > 80){  // Author : Puneet Sharma
-       needs_pdcch = false;
+      if (testcount > 79){  // Author : Puneet Sharma
+        needs_pdcch = false;
+        sched_result->pusch[nof_dci_elems].dci_location.ncce = CCEIndex;
+        //alloc.RB_start=0;
+        //alloc.L=20;
+        //h->set_alloc(alloc);
+
       }
-    testcount++;  
+        testcount++;  
       if (needs_pdcch) { log_h->info("Generate PDCCH\n");  
         uint32_t aggr_level = user->get_aggr_level(srslte_dci_format_sizeof(SRSLTE_DCI_FORMAT0, cfg.cell.nof_prb, cfg.cell.nof_ports));
         if (!generate_dci(&sched_result->pusch[nof_dci_elems].dci_location, 
@@ -972,7 +978,7 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
             // Un-trigger SR
             user->unset_sr();
           }
-
+          CCEIndex = sched_result->pusch[nof_dci_elems].dci_location.ncce;
           log_h->info("SCHED: %s %s rnti=0x%x, pid=%d, dci=%d,%d, grant=(%d,%d), n_rtx=%d, tbs=%d, bsr=%d (%d-%d)\n",
                       is_rar?"RAR":"UL",
                       is_newtx?"tx":"retx",                

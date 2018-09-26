@@ -706,6 +706,7 @@ int sched_ue::generate_format0(ul_harq_proc *h,
   int tbs = 0; 
   
   ul_harq_proc::ul_alloc_t allocation = h->get_alloc();
+
   
   bool is_newtx = true;
   if (h->get_rar_mcs(&mcs)) {

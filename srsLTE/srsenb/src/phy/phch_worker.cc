@@ -578,7 +578,7 @@ int phch_worker::decode_pusch(srslte_enb_ul_pusch_t *grants, uint32_t nof_pusch)
       srslte_ra_ul_grant_t phy_grant;
       int res = -1;
       if (!srslte_ra_ul_dci_to_grant(&grants[i].grant, enb_ul.cell.nof_prb, n_rb_ho, &phy_grant)) {
-
+        phy_grant.mcs.idx=15;
         // Handle Format0 adaptive retx
         // Use last TBS for this TB in case of mcs>28
         if (phy_grant.mcs.idx > 28) {
