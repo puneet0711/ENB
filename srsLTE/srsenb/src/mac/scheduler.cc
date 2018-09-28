@@ -945,7 +945,10 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
         //alloc.RB_start=0;
         //alloc.L=20;
         //h->set_alloc(alloc);
-
+        if (testcount==80){
+          printf("Without Scheduling Mode\n");
+        }
+        
       }
         testcount++;  
       if (needs_pdcch) { log_h->info("Generate PDCCH\n");  

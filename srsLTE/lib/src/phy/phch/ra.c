@@ -203,7 +203,7 @@ else {// Author : Puneet Sharma ------------------------------------------------
   uint32_t n_prb_1 = 0;
   uint32_t n_rb_pusch = 0;
   
-  printf("the else loop PRBlen = %d & grant->L_prb = %d\n", PRBlen, grant->L_prb);
+  //printf("the else loop PRBlen = %d & grant->L_prb = %d\n", PRBlen, grant->L_prb);
 
 
   if (n_rb_ho%2) {
