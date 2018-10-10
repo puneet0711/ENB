@@ -939,19 +939,19 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
       }
 
       // Generate PDCCH except for RAR and non-adaptive retx
-      if (testcount > 79){  // Author : Puneet Sharma
+      if (testcount > 25){  // Author : Puneet Sharma
         needs_pdcch = false;
         sched_result->pusch[nof_dci_elems].dci_location.ncce = CCEIndex;
         //alloc.RB_start=0;
         //alloc.L=20;
         //h->set_alloc(alloc);
-        if (testcount==80){
+        if (testcount==26){
           printf("Without Scheduling Mode\n");
         }
         
       }
         testcount++;  
-      if (needs_pdcch) { log_h->info("Generate PDCCH\n");  
+      if (needs_pdcch) { log_h->info("Sending PDCCH\n");  
         uint32_t aggr_level = user->get_aggr_level(srslte_dci_format_sizeof(SRSLTE_DCI_FORMAT0, cfg.cell.nof_prb, cfg.cell.nof_ports));
         if (!generate_dci(&sched_result->pusch[nof_dci_elems].dci_location, 
             user->get_locations(current_cfi, sf_idx),
@@ -989,8 +989,11 @@ int sched::ul_sched(uint32_t tti, srsenb::sched_interface::ul_sched_res_t* sched
                       sched_result->pusch[nof_dci_elems].dci_location.L, sched_result->pusch[nof_dci_elems].dci_location.ncce,
                       alloc.RB_start, alloc.RB_start+alloc.L, h->nof_retx(0), sched_result->pusch[nof_dci_elems].tbs,
                       user->get_pending_ul_new_data(current_tti),pending_data_before, user->get_pending_ul_old_data());
-
-          nof_dci_elems++;          
+           nof_dci_elems++; 
+          if (!needs_pdcch){
+            log_h->info("Stop Sending PDCCH\n");  
+          }
+                  
         } else {
           log_h->warning("SCHED: Error %s %s rnti=0x%x, pid=%d, dci=%d,%d, grant=(%d,%d), tbs=%d, bsr=%d\n",
                       is_rar?"RAR":"UL",

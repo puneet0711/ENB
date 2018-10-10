@@ -203,8 +203,22 @@ cf_t* phch_worker::get_buffer_rx(uint32_t antenna_idx)
   return signal_buffer_rx[antenna_idx];
 }
 
+bool change =false;
+int changecount = 0;
 void phch_worker::set_time(uint32_t tti_, uint32_t tx_mutex_cnt_, srslte_timestamp_t tx_time_)
 {
+  if (tti_==1681)
+{
+
+printf("Shift to reduced counter \n");
+changecount++;
+}
+if (changecount==2)
+{
+change = true;
+}
+
+if (!change){
   tti_rx       = tti_; 
   tti_tx_dl    = TTI_TX(tti_rx);
   tti_tx_ul    = TTI_RX_ACK(tti_rx);
@@ -218,6 +232,24 @@ void phch_worker::set_time(uint32_t tti_, uint32_t tx_mutex_cnt_, srslte_timesta
 
   tx_mutex_cnt = tx_mutex_cnt_;
   memcpy(&tx_time, &tx_time_, sizeof(srslte_timestamp_t));
+  }
+
+  else 
+  {
+  tti_rx       = tti_; 
+  tti_tx_dl    = ((tti_rx+2)%10240);
+  tti_tx_ul    = ((tti_rx+6)%10240);
+
+  sf_rx        = tti_rx%10;
+  sf_tx        = tti_tx_dl%10;
+
+  t_tx_dl      = TTIMOD(tti_tx_dl);
+  t_rx         = TTIMOD(tti_rx);
+  t_tx_ul      = TTIMOD(tti_tx_ul);
+
+  tx_mutex_cnt = tx_mutex_cnt_;
+  memcpy(&tx_time, &tx_time_, sizeof(srslte_timestamp_t));
+  }
 }
 
 int phch_worker::add_rnti(uint16_t rnti)
@@ -420,6 +452,7 @@ void phch_worker::work_imp()
     Error("Invalid CFI=%d\n", dl_grants[t_tx_dl].cfi);
     goto unlock;
   }
+
 
   // Get UL scheduling for the TX TTI from MAC
   if (mac->get_ul_sched(tti_tx_ul, &ul_grants[t_tx_ul]) < 0) {

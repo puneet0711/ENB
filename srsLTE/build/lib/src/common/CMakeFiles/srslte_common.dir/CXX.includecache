@@ -84,26 +84,6 @@ stdint.h
 string
 -
 
-../lib/include/srslte/common/mac_pcap.h
-stdint.h
--
-srslte/common/pcap.h
-../lib/include/srslte/common/srslte/common/pcap.h
-
-../lib/include/srslte/common/nas_pcap.h
-srslte/common/pcap.h
-../lib/include/srslte/common/srslte/common/pcap.h
-
-../lib/include/srslte/common/pcap.h
-stdio.h
--
-string.h
--
-arpa/inet.h
--
-sys/time.h
--
-
 ../lib/include/srslte/common/pdu.h
 stdint.h
 -
@@ -127,12 +107,6 @@ srslte/common/timers.h
 ../lib/include/srslte/common/srslte/common/timers.h
 srslte/common/pdu.h
 ../lib/include/srslte/common/srslte/common/pdu.h
-
-../lib/include/srslte/common/rlc_pcap.h
-stdint.h
--
-srslte/common/pcap.h
-../lib/include/srslte/common/srslte/common/pcap.h
 
 ../lib/include/srslte/common/security.h
 srslte/common/common.h
@@ -1270,26 +1244,6 @@ stdio.h
 string
 -
 
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/mac_pcap.cc
-stdint.h
--
-srslte/srslte.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/srslte.h
-srslte/common/pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/pcap.h
-srslte/common/mac_pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/mac_pcap.h
-
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/nas_pcap.cc
-stdint.h
--
-srslte/srslte.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/srslte.h
-srslte/common/pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/pcap.h
-srslte/common/nas_pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/nas_pcap.h
-
 /home/uhost9/v3_puneet/srsLTE/lib/src/common/pdu.cc
 strings.h
 -
@@ -1305,16 +1259,6 @@ srslte/srslte.h
 /home/uhost9/v3_puneet/srsLTE/lib/src/common/pdu_queue.cc
 srslte/common/pdu_queue.h
 /home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/pdu_queue.h
-
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/rlc_pcap.cc
-stdint.h
--
-srslte/srslte.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/srslte.h
-srslte/common/pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/pcap.h
-srslte/common/rlc_pcap.h
-/home/uhost9/v3_puneet/srsLTE/lib/src/common/srslte/common/rlc_pcap.h
 
 /home/uhost9/v3_puneet/srsLTE/lib/src/common/security.cc
 srslte/common/security.h
